@@ -161,7 +161,7 @@ function App() {
     const TEALine = new THREE.Line(TEA, material);
     const PCALine = new THREE.Line(PCA, material);
 
-    setAxisLines([mechAxisLine]);
+    setAxisLines([mechAxisLine, anaAxisLine, TEALine, PCALine]);
 
     //planes
     const secondPlaneMat = new THREE.MeshBasicMaterial({ color: "red" });
@@ -234,7 +234,7 @@ function App() {
   };
 
   const drawLineWithPlaneAndDir = (dir, plane, dirName, material) => {
-    const lineVector = new THREE.Vector3().copy(dir).multiplyScalar(60);
+    const lineVector = new THREE.Vector3().copy(dir).multiplyScalar(-60);
     const newLineEndpoint = new THREE.Vector3()
       .copy(plane.position)
       .add(lineVector);
